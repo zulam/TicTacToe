@@ -10,7 +10,7 @@
  Author #2: Zack Ulam
  */
 
-#include "header.h"
+#include "header.hpp"
 
 int main() {
     Game myGame;
