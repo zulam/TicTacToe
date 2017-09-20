@@ -1,0 +1,17 @@
+1. Player chooses 1 player or 2 player. If 1 player, player O is automated. 
+2. Player X chooses a cell
+3. If input is 0, end game. 
+4. If input is not 1-9, display error message and <<2>>
+5. If 3 consecutive X’s up, down or diagonal, <<A1>>
+6. If player took 9th total turn, <<A2>>
+7. Player O chooses a cell
+8. If input is 0, end game. 
+9. If input is not 1-9, display error message and <<7>>
+10. If 3 consecutive O’s up, down or diagonal, <<A1>>
+11. If player took 9th total turn, <<A2>>
+12. <<2>>
+
+A1: Notify winner.  If winner is computer, reset game and <<2>>. If it is the player’s first win, mark them on a roll and <<2>>. Otherwise, if win count=3, 6, or 9, ask player if they would like to cash out count*100000 dollars. If no, save winnings and <<2>>. If yes, notify player of winnings and end game. If count=10, notify player of winning 1000000 dollars and end game. If count is another number, save winnings <<2>>. 
+
+A2: Notify players of tie game. Clear winnings and <<2>>. 
+
