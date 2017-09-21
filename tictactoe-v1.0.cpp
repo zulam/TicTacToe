@@ -22,9 +22,19 @@ int main() {
     if (numPlayers == 1) {
         myGame.setCompPlaying();
     }
+    myGame.draw();
     while (myGame.playAgain)
     {
-        myGame.draw();
+        //tie
+        if (myGame.getTurnNum() == 10) {
+            cout << "Tie!" << endl;
+            myGame.player1.clearCash();
+            myGame.player2.clearCash();
+            myGame.setTie();
+            myGame.clearBoard();
+            myGame.draw();
+            continue;
+        }
         
         if (myGame.takeTurn() == false) {
             cout << "Not a valid move. Try again: " << endl;
@@ -33,7 +43,7 @@ int main() {
         
         else {
             winner = myGame.win();
-            myGame.getBoard().draw();
+            myGame.draw();
             if (myGame.getWhoseTurn() == 'X') {
                 myGame.setWhoseTurn('O');
             }
@@ -74,6 +84,7 @@ int main() {
             myGame.clearBoard();
             continue;
         }
+        myGame.setTurnNum();
     }
     cout << "Game ended. Thanks for playing!" << endl;
 }
